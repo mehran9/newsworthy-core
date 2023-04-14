@@ -1,0 +1,195 @@
+streamers: [
+  {
+    consumer_key: 'b2vrvNC8Y6vaHTiOJjoOJk2ad',
+    consumer_secret: 'hzjAZeH7fNXPyfLvhQpKdCbSggGp1vy7IEeseSExZXCsXEXoXm',
+    oauth_token: '3236966521-BeWVfjTOIZhrKnSLWtJAqwiqPxcLhx2MoKkEtTz',
+    oauth_token_secret: '9E1UwacIcUFrKyf8BkX3bQNLnGjoVaNoyEXKw39exX3JY',
+    topic: 'Business',
+    active: true
+  },
+  {
+    consumer_key: 'JDPoq9jYBXciHc9OzieQKwm0i',
+    consumer_secret: 'tcyf54132jrUGfe3y5lDGQke9eXNCd23AKxdARX8AVofctijus',
+    oauth_token: '3236975936-kSLpPRKqAQKLotQHx1IR2W7xT7qCb6cJzgdjLoJ',
+    oauth_token_secret: 'RvCySuEiqKHQKOllWR1Z4y4Xj1hNvNzI2JPVlpwTZGwHM',
+    topic: 'Culture & Lifestyle',
+    active: true
+  },
+  {
+    consumer_key: 'PJS9PkyuPfI4sqApiWFGdhK1L',
+    consumer_secret: 'm4Ji5Py23JXhCGioUKYNu3Iso0L1RncIWnzFsqBoBwREKSX70o',
+    oauth_token: '3237414044-BTnqmiMJCaVAviZvztgQMFliKSaj7rk33n5hDpE',
+    oauth_token_secret: 'YYOjppzkptHO2aVA8FN4RwrZcS5ZVcFDPB8IvnB31qI4V',
+    topic: 'Design',
+    active: true
+  },
+  {
+    consumer_key: '0WSRzqBqR7kDgW8y37CaB1scs',
+    consumer_secret: 'CtT3WyaAtzRWGD8bbNsznIwsj20n8pRUvuI3q0Mbb0Xlwkm9OS',
+    oauth_token: '3237461833-VxjG7YbDo31Dol7InnXXaPfaIPtDSCv8MRWQeaz',
+    oauth_token_secret: '86M2xEVL5FS7Gu4mcQOXBRg5zi9G10OV5e11E8ExuglPN',
+    topic: 'Entertainment',
+    active: true
+  },
+  {
+    consumer_key: '93Hniu0Uuv9XR01PcC8H9rriA',
+    consumer_secret: 'mOJsADo0oifKFsQjN0PG4LH7EwwJIRIucbhMdIezGhgrOZYkBD',
+    oauth_token: '3237380148-FjUkvhfVn8R6yBPSa96mOLOt8dKhqvbqG5KWgAI',
+    oauth_token_secret: 'VT6VOHzGyAaJ0vwDHoWmNC4fLewpKhkTgG6OgqN3ugf05',
+    topic: 'Fashion',
+    active: true
+  },
+  {
+    consumer_key: 'HBIjIYff12756PvPwrsswWl1X',
+    consumer_secret: 'WWHxPTgBS8NnsCtYUgEYTxgbMl1xkpm0Javb1b0Cx3KJOHJ2XQ',
+    oauth_token: '3237491149-aaMJMyQgCnwBwQ7EN7UWvlTQkKqMDNxZvcn10QN',
+    oauth_token_secret: 'aY7Z4aL853btaMutsyW96CKJ78Dmh9rk5HN1CO3Cdu5Jt',
+    topic: 'Foreign Policy',
+    active: true
+  },
+  {
+    consumer_key: 'caNOTcTdz51X7DtEypPTTxIGt',
+    consumer_secret: 'v1DZsulEuqyfZg58x508MupfbpTyM6hGb7HuLrsvWt5PQtuCDK',
+    oauth_token: '3237498974-Cm4EoDyOm2cgae8qzaqMNgjvFas7p3bmG99CD7u',
+    oauth_token_secret: 'Qtg0iDgeXj8bfluEp4I2LAvK4KcjWzGdFLD54A8Nhauo1',
+    topic: 'Health',
+    active: true
+  },
+  {
+    consumer_key: 'kOd9gTfHNpLE8MSiLEzJT7uKg',
+    consumer_secret: '1I2dcRe8sKlcJLcgggr5WGZnmA8wJ8LOEsCjrTTGqWOtO4j38W',
+    oauth_token: '3237542797-plDzdvATahOBPkQHOnMNuJs5yzix0Nmz5vgO3hs',
+    oauth_token_secret: 'qpiMarUJ2XS3VdZNtTIyYY3jYSmlgFnLmUCkOCfJ7Rleq',
+    topic: 'Markets',
+    active: true
+  },
+  {
+    consumer_key: 'R1sUB0pjhHBKghamD4LfMz7aJ',
+    consumer_secret: 'QLClshiH1NFfW064IhoLqUDpbKJ0ihWLGAJC32lk7A8UPPO32w',
+    oauth_token: '3237535410-yCoITaonmLqIamWpqh2M53xa61osPvCHO0JQksN',
+    oauth_token_secret: 'COcFoaz6Cv42dzfwQHraVHRIqWCvr8K1ekI7KZeFj8B29',
+    topic: 'Media & Advertising',
+    active: true
+  },
+  {
+    consumer_key: 'c1KC3gp3PmwESBQoaSFFRKpVR',
+    consumer_secret: 'yaOt9aX4NQUPjXOSIY7BckCw6UpTIO1J28Y3YzrfdvEUImyye3',
+    oauth_token: '3237635683-7TgdGPQy0gKJLznLTQRnVEOuVKmNfWbKzIeeM27',
+    oauth_token_secret: 'as6pLPEwdcojOFovyAsjyGJHoDYABo428g4BaL8iGs40E',
+    topic: 'Politics',
+    active: true
+  },
+  {
+    consumer_key: '5Pye7mKwf7LhrJnUhxq1ipIZ0',
+    consumer_secret: 'zYgkHEosGNTAZNMZ1PeNSQCRSwnbawZKDne1areGrN2lPjhQdn',
+    oauth_token: '3237550908-oKvqXsk7W9f1AUQ6E2diLYoWoMqtT7KlF66S6dR',
+    oauth_token_secret: '3eWTTGUHkxrtT2FNv9SuR3jAlgl6771LxzzoFKs2nrVNl',
+    topic: 'Science',
+    active: true
+  },
+  {
+    consumer_key: 'ugSevMYwUHJZQyEkwySKp38Us',
+    consumer_secret: 'cIvMV37gR2os9nIVqVjeIlZUXQqHOHDZ1oWCjmig74suhcedaH',
+    oauth_token: '3237649663-4B7XwK2N5w0qzXS3JaSk9DcOzJeTsOSyiWzTQWW',
+    oauth_token_secret: 'ZpZfP0mbudusX7bS9sPX3nVy1X1qkBWq9RO8AIYYAArsm',
+    topic: 'Sport',
+    active: true
+  },
+  {
+    consumer_key: '66o5oYat34pvdpvCsCcHK6c6F',
+    consumer_secret: 'pcQzE3cPKhegONIZZn3p3JkmcYLYJtsLSoAOrR3DyPDZ99AEJL',
+    oauth_token: '3237720985-Ct9TBMkurZeNOUCWgM0Y0t5ZL4Gxq1PrQ66zHA2',
+    oauth_token_secret: 'V8sAfaSV1sFndCBhMKjvGAnnNDLXAC2sp9eQ8Uwfl0E1H',
+    topic: 'Technology',
+    active: true
+  },
+  {
+    consumer_key: '9SFWRrKRh9b2WhwjErrNIjDDN',
+    consumer_secret: 'hUU8tkLyBNpvARFVZB4Cde28xIve4HxBAjJLq6yWkeRfvwN45t',
+    oauth_token: '3119963958-3qAkO3gaT1Bls5uIYbLmBR2fB6Mh2FTdOEIPdDQ',
+    oauth_token_secret: 'HmoT2tbpP74ksXZsvpNgrTJ4YJkjrZFHdfuuSFwIqqo6Q',
+    topic: 'Venture Capital',
+    active: true
+  },
+  {
+    consumer_key: 'TlEi0ZgME5uOUTqtzp1m49Ivp',
+    consumer_secret: '88shJ47D9xn23sVuYOTHulRXsPIc2zZfiEjRAdULdjMIfF13bZ',
+    oauth_token: '3239695380-sf0UmvONNqdcJTqEPNP61QbjzXZVSXmWiAC3mlG',
+    oauth_token_secret: 'bkSwJb1Pb0FWwi09jfgEpoReEX7y2ruJghLRhOSc3ZOBG',
+    topic: 'Non-Profit / Social Impact',
+    active: true
+  },
+  {
+    consumer_key: 'rnNKW1qsZb1dIWcGIRPvuHmKj',
+    consumer_secret: 'Kx7lbWDFYSXoGNBHKnNqo36nj6mVTVzaOQ8s4OVUybfexNjzIj',
+    oauth_token: '3239812495-cFxZ0Grxi6y77LjOAgFIeD1yNApl67mFHCZuRZ5',
+    oauth_token_secret: 'AF5uve3149CnmqSr0tAziw2gYGVA7TeCqxfVvJsn3gy5g',
+    topic: 'Education',
+    active: true
+  },
+  {
+    consumer_key: '1Exveh48aIwomeg4MT0rzHwux',
+    consumer_secret: '0szZkoSSiAlg1qV0L24o03cz0RYCdcV3Elyn4IqDxLfZi9rhQs',
+    oauth_token: '3239782784-OPJ3GLcGvs3ZH5jAqLDsmye7y5p0S75SiX0u2SX',
+    oauth_token_secret: '0YGxbev2z2FM5HWMqISNqtOLKOJHAylRtCajCyDwVhyHU',
+    topic: 'Startups',
+    active: true
+  },
+  {
+    consumer_key: 'p4Bfk9KGJnNv5PNV7fjZLVHCP',
+    consumer_secret: 'd5W7WcMEpPtXrYYl15fn0fhjOdU1OjZ77tJBKNSLeTSMYdVGcV',
+    oauth_token: '3239792318-O8IsuDVSCpnRjUhUX1w5LJ2L6A7HQ8WMuAoJNLH',
+    oauth_token_secret: 'WgcRQGcEyISb90zIeyCLv2HEldj8EapILFkF3hjWjj8dE',
+    topic: 'Leadership',
+    active: true
+  }
+]
+parse:
+  application_id: oQSxvN9lIeY8imViEcc2x6lexoAVQ9bTXRjjoXHN
+  api_key: OkKLubjZb7D7pwkLzLSKi85RT04qc5LIztV1e8z1
+  js_key: K71ouDqy69T3DjRbbqssNl7wH6U2Lv2GYJ16DNDm
+  master_key: kgalxwYwOZHUzehI4BlmnnHvg1vxUCJvPPnYyW10
+  quiet: true
+  host: 'http://maven-production-parse-server.us-east-1.elasticbeanstalk.com'
+  path: '/parse'
+tweet_expected_lang: en
+website:
+  twitter:
+    consumer_key: 'DzBAlALyDAuErkyVarf0C47m6'
+    consumer_secret: 'wKDtQeRq7F6ZGBtjs1cDtzE2u3rvpPk7lpcQbQ3mgue59lpbx9'
+    oauth_token: '2616707372-qgk6hFwtte2tuI6UQWjRSayZfbseMtzuAYteqBU'
+    oauth_token_secret: 'ZjxDXMJsToVppf51GO5pfIwhdV6sB083rSxaFBAkdL3tl'
+  facebook:
+    application_id: 1612492745669574
+    application_secret: 813460c5e9f54a6af4e374f9e684e574
+    callback_url: 'http://getmaven.io/'
+google:
+  search_api_key: AIzaSyD0EJaF3yNkV8URzTi2Hxjm1WrePROA-SU
+  search_engine_id: 001467112278132618762:r7lecd-kwve
+createsend:
+  list_id: 881d20190b460416d220c4a6733be858
+pipl:
+  api_key: 3ep4xwd9p0pgy8hlbrq7qm7t
+fullcontact:
+  api_key: 7667948221c855d0
+dandelion: [
+  {
+    app_id: 0000bb9d,
+    app_key: ef45c22bd15ab0335f6c8c0437346516
+  },
+  {
+    app_id: 47582133,
+    app_key: 9a2eca56ceece8f283124a8dee267579
+  },
+  {
+    app_id: d39abfe6,
+    app_key: 7e41b04408cb8d897e6e38a077159d4f
+  }
+]
+pools:
+  default: 2
+  low_priority: 2
+db:
+  backup:
+    user: root
+    password: 6a49454b8386a0b5e4a89708444c7c42d28caa7a20e30b75b7f8479017f44cb0

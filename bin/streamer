@@ -1,0 +1,156 @@
+#!/usr/bin/env ruby
+
+ENV['RAILS_ENV'] ||= 'production'
+
+root = File.expand_path(File.join(File.dirname(__FILE__), '..'))
+require File.join(root, 'config', 'environment')
+
+Rails.logger = Logger.new(STDOUT)
+Rails.logger.level = (Rails.env.development? ? Logger::DEBUG : Logger::ERROR)
+
+def launch_stream(s, root)
+  topic = s.topic.parameterize
+  proxy = Settings.proxies.delete(Settings.proxies.sample).split(':')
+
+  p "Start #{s.topic} with proxy #{proxy.first}:#{proxy.last}"
+
+  TweetStream.configure do |config|
+    config.consumer_key = s.consumer_key
+    config.consumer_secret = s.consumer_secret
+    config.oauth_token = s.oauth_token
+    config.oauth_token_secret = s.oauth_token_secret
+    config.auth_method = :oauth
+    config.proxy = { host: proxy.first, port: proxy.last } unless Rails.env.development?
+  end
+
+  if Rails.env.development?
+    client = TweetStream::Client.new
+  else
+    client = TweetStream::Daemon.new("streamer-#{topic}",
+                                     log_output: true,
+                                     log_dir: File.join(root, 'log'),
+                                     multiple: true,
+                                     dir: File.join(root, 'tmp', 'pids'),
+                                     output_logfilename: "streamer-#{topic}.log")
+  end
+
+  client.on_inited do
+    STDOUT.sync = true
+    p "Streamer #{topic} connected"
+
+    # Fetch all missed tweets for this topic
+    initialize_streamer(topic, s)
+  end
+
+  client.on_limit do |skip_count|
+    p "WARN: on_limit: #{skip_count}"
+  end
+
+  client.on_enhance_your_calm do
+    p 'ERROR: on_enhance_your_calm'
+  end
+
+  client.on_error do |message|
+    p "ERROR: on_error: #{message}"
+  end
+
+  client.on_reconnect do |timeout, retries|
+    p "WARN: on_reconnect: #{timeout} #{retries}"
+  end
+
+  client.on_direct_message do |direct_message|
+    p "DEBUG: direct message > #{direct_message.text}"
+  end
+
+  client.on_timeline_status do |t|
+    p "DEBUG: Tweet: #{t.id}"
+
+    if t.urls.any? && (Rails.env.development? || !t.lang || t.lang == Settings.tweet_expected_lang)
+      FetchArticle.perform_later(Utils.tweet_to_h(t), s.topic)
+    end
+
+    Streamer.where(topic: topic).first.update(last_tweet_id: t.id)
+  end
+
+  client.userstream
+
+  client.on_delete do |status_id|
+    p "DEBUG: Tweet deleted #{status_id} (#{status_id.class})"
+    # DeleteTweet.set(wait: 2.minutes).perform_later(status_id)
+  end
+end
+
+def initialize_streamer(topic, s)
+  streamer = Streamer.where(topic: topic).first_or_create
+  proxy = "http://#{Settings.proxies.sample}"
+  client = Utils.twitter_client(s, proxy)
+
+  if streamer['last_tweet_id']
+    p "INFO: Get missed tweets for #{topic} since #{streamer.last_tweet_id} with proxy #{proxy}"
+
+    last_tweet_id = streamer.last_tweet_id
+    4.times do #800 max historical tweets
+      begin
+        count = 0
+        opts = { count: 200 }
+        opts[:since_id] = last_tweet_id if last_tweet_id
+        p "INFO: Fetch tweets from #{opts}"
+        client.home_timeline(opts).each do |tweet|
+          p "DEBUG: Old Tweet: #{tweet.id} with urls ? #{tweet.urls?}"
+          FetchArticle.perform_later(Utils.tweet_to_h(tweet), s.topic) if tweet.urls?
+          count += 1
+          last_tweet_id = tweet.id
+        end
+        break if count < 200 || count == 0
+      rescue Exception => e
+        p "WARN: Can't fetch missed tweets for #{topic}: #{e.message}"
+      end
+    end
+  end
+
+  data = {
+      started_at: Time.now,
+      last_tweet_id: nil,
+      consumer_key: s[:consumer_key],
+      consumer_secret: s[:consumer_secret],
+      oauth_token: s[:oauth_token],
+      oauth_token_secret: s[:oauth_token_secret]
+  }
+
+  begin
+    info = nil
+    Retriable.retriable do
+      info = client.user
+    end
+
+    raise Exception unless info
+
+    data['twitter_id'] = info.id
+    data['name'] = info.name
+    data['screen_name'] = info.screen_name
+    data['friends_count'] = info.friends_count
+    data['followers_count'] = info.followers_count
+  rescue Exception => e
+    # ignored
+  end
+
+  streamer.update(data)
+end
+
+if ARGV[1] && !ARGV[1].empty?
+  p 'ERROR: Not enough proxies' and exit(1) if Settings.proxies.count < 1
+  p "DEBUG: Starting streamer: #{ARGV[1]}"
+  s = Settings.streamers.select{|s| s.active && s.topic.parameterize == ARGV[1].parameterize }.first
+
+  if s
+    launch_stream(s, root)
+  else
+    ApplicationController.error(Rails.logger, "Can't find streamer: #{ARGV[1]}")
+  end
+else
+  p 'ERROR: Not enough proxies' and exit(1) if Settings.proxies.count < Settings.streamers.count
+
+  Settings.streamers.select{|s| s.active }.map do |s|
+    launch_stream(s, root)
+  end
+end

@@ -1,0 +1,48 @@
+---
+- !ruby/object:Rubber::Configuration::InstanceItem
+  name: staging
+  domain: newsworthy.io
+  roles:
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: common
+    options: {}
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: monit
+    options: {}
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: delayed_job
+    options: {}
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: newrelic
+    options: {}
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: ssh_keys
+    options: {}
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: streamer
+    options: {}
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: db
+    options:
+      primary: true
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: mongodb
+    options: {}
+  instance_id: i-d458f32c
+  image_type: t2.micro
+  image_id: ami-d05e75b8
+  security_groups:
+  - ssh
+  zone: us-east-1e
+  network: 
+  gateway: 
+  external_host: ec2-54-84-249-3.compute-1.amazonaws.com
+  external_ip: 54.84.249.3
+  internal_host: ip-172-31-2-33.ec2.internal
+  internal_ip: 172.31.2.33
+  provider: aws
+  platform: linux
+  root_device_type: ebs
+- volumes: {}
+  static_ips: {}
+  vpc: {}

@@ -1,0 +1,8 @@
+mongodb_data_dir: /var/lib/mongodb
+mongodb_log_dir: /var/log/mongodb
+mongodb_log: "#{mongodb_log_dir}/mongod.log"
+mongodb_pid: "/var/run/mongodb.pid"
+
+roles:
+  mongodb:
+    packages: [mongodb-org mongodb-org-server mongodb-org-shell mongodb-org-mongos mongodb-org-tools]

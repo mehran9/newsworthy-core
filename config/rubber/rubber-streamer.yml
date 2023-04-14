@@ -1,0 +1,1 @@
+streamer_pid_dir: "/mnt/#{app_name}-#{Rubber.env}/current/tmp/pids"

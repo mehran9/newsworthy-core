@@ -1,0 +1,112 @@
+---
+- !ruby/object:Rubber::Configuration::InstanceItem
+  name: web01
+  domain: newsworthy.io
+  roles:
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: web
+    options: {}
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: app
+    options: {}
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: nginx
+    options: {}
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: unicorn
+    options: {}
+  instance_id: i-81eeb822
+  image_type: t2.micro
+  image_id: ami-d05e75b8
+  security_groups:
+  - ssh
+  - web
+  external_host: ec2-52-6-3-100.compute-1.amazonaws.com
+  external_ip: 52.6.3.100
+  internal_host: ip-172-31-48-25.ec2.internal
+  internal_ip: 172.31.48.25
+  zone: us-east-1d
+  provider: aws
+  platform: linux
+  root_device_type: ebs
+- !ruby/object:Rubber::Configuration::InstanceItem
+  name: queues01
+  domain: newsworthy.io
+  roles:
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: delayed_job
+    options: {}
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: newrelic
+    options: {}
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: monit
+    options: {}
+  instance_id: i-021d0cf7e4438d8b9
+  image_type: t2.micro
+  image_id: ami-9a562df2
+  security_groups:
+  - ssh
+  external_host: ec2-54-234-96-226.compute-1.amazonaws.com
+  external_ip: 54.234.96.226
+  internal_host: ip-172-31-7-94.ec2.internal
+  internal_ip: 172.31.7.94
+  zone: us-east-1e
+  provider: aws
+  platform: linux
+  root_device_type: ebs
+- !ruby/object:Rubber::Configuration::InstanceItem
+  name: queues02
+  domain: newsworthy.io
+  roles:
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: delayed_job
+    options: {}
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: newrelic
+    options: {}
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: monit
+    options: {}
+  instance_id: i-09a27d13f70a4322e
+  image_type: t2.micro
+  image_id: ami-9a562df2
+  security_groups:
+  - ssh
+  external_host: ec2-54-209-53-119.compute-1.amazonaws.com
+  external_ip: 54.209.53.119
+  internal_host: ip-172-31-58-148.ec2.internal
+  internal_ip: 172.31.58.148
+  zone: us-east-1d
+  provider: aws
+  platform: linux
+  root_device_type: ebs
+- !ruby/object:Rubber::Configuration::InstanceItem
+  name: streamer01
+  domain: newsworthy.io
+  roles:
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: streamer
+    options: {}
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: newrelic
+    options: {}
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: monit
+    options: {}
+  instance_id: i-00e5f473ac2789b33
+  image_type: t2.medium
+  image_id: ami-9a562df2
+  security_groups:
+  - ssh
+  external_host: ec2-54-86-17-179.compute-1.amazonaws.com
+  external_ip: 54.86.17.179
+  internal_host: ip-172-31-28-72.ec2.internal
+  internal_ip: 172.31.28.72
+  zone: us-east-1b
+  provider: aws
+  platform: linux
+  root_device_type: ebs
+- volumes: {}
+  static_ips: {}
+  vpc: {}

@@ -1,0 +1,90 @@
+//= require jquery
+//= require jquery_ujs
+
+$(function(){
+    $('#nav-bar-wrapper').data('size','big');
+
+    // Handle ESC key (key code 27)
+    document.addEventListener('keyup', function(e) {
+        if (e.keyCode == 27) {
+            modalClose();
+        }
+    });
+
+    var modal = document.querySelector('#openModal');
+
+    if (modal) {
+        // Handle click on the modal container
+        modal.addEventListener('click', modalClose, false);
+
+        // Prevent event bubbling if click occurred within modal content body
+        modal.children[0].addEventListener('click', function(e) {
+            e.stopPropagation();
+        }, false);
+    }
+
+    $('#sign-up-form').on('ajax:before', function() {
+        $('#form-errors').text('');
+    }).on('ajax:complete', function(e, xhr) {
+        if (xhr.status == 200) {
+            window.location = xhr.responseText;
+        } else {
+            $('#form-errors').text(xhr.responseText);
+        }
+    });
+
+    $('.share_facebook').on('click', function(e) {
+        e.preventDefault();
+        FB.ui({
+            method: 'feed',
+            link: $(this).data('url')
+        }, function(response){});
+    });
+});
+
+$(window).scroll(function(){
+    var e = $('#nav-bar-wrapper');
+    if($(document).scrollTop() > 0)
+    {
+        if(e.data('size') == 'big')
+        {
+            e.data('size','small');
+            e.stop().animate({
+                height:'55px'
+            },300);
+        }
+    }
+    else
+    {
+        if(e.data('size') == 'small')
+        {
+            e.data('size','big');
+            e.stop().animate({
+                height:'100px'
+            },300);
+        }
+    }
+});
+
+function modalClose() {
+    if (location.hash == '#openModal') {
+        location.hash = '';
+    }
+}
+
+window.fbAsyncInit = function() {
+    FB.init({
+        appId: '<%= Settings.website.facebook.application_id %>',
+        cookie: true,  // enable cookies to allow Parse to access the session
+        xfbml: true,  // initialize Facebook social plugins on the page
+        version: 'v2.4'
+    });
+};
+
+(function(d, s, id){
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) {return;}
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));

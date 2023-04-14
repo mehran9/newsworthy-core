@@ -1,0 +1,55 @@
+streamers: [
+  {
+    consumer_key: 'yaErdBhDzDseTMI1Qyaw',
+    consumer_secret: 'pVq4D3OtnsZe1A0U0MwJTcKxIfwnZmuyAhoyLtMZDm8',
+    oauth_token: '364970752-KsEkgz4RvdiRbZHYl7dBYHDLglJv2GDTkxq4XyXg',
+    oauth_token_secret: '5mFkUeFB7cVM6RhbgZTjcteUKyQD5LOlJjutwsF7G5SJN',
+    topic: 'Test',
+    active: true
+  }
+]
+parse:
+  application_id: FJucN8VcpUPLfGykWmnjqlNvO69uAGehd4bMwWcF
+  api_key: ayOby9Xm0wP3JPbG6wUHK94B61Bq2BqSPppSRl2s
+  js_key: rw85CPlRMRAXiTGtT8kGP0uH8AjyMv3S8hKkKbuY
+  master_key: xQU2kfbhTu339jSRggndnDEgCKSSzVearpMHglau
+  quiet: true
+  host: 'https://api.parse.com'
+  path: '/1'
+tweet_expected_lang: fr
+website:
+  twitter:
+    consumer_key: 'DzBAlALyDAuErkyVarf0C47m6'
+    consumer_secret: 'wKDtQeRq7F6ZGBtjs1cDtzE2u3rvpPk7lpcQbQ3mgue59lpbx9'
+    oauth_token: '2616707372-qgk6hFwtte2tuI6UQWjRSayZfbseMtzuAYteqBU'
+    oauth_token_secret: 'ZjxDXMJsToVppf51GO5pfIwhdV6sB083rSxaFBAkdL3tl'
+  facebook:
+    application_id: 1612492745669574
+    application_secret: 813460c5e9f54a6af4e374f9e684e574
+    callback_url: 'http://getmaven.io/'
+google:
+  search_api_key: AIzaSyD0EJaF3yNkV8URzTi2Hxjm1WrePROA-SU
+  search_engine_id: 001467112278132618762:r7lecd-kwve
+createsend:
+  list_id: d7b969506aabdbe3d1623af0a56770c6
+pipl:
+  api_key: 3ep4xwd9p0pgy8hlbrq7qm7t
+fullcontact:
+  api_key: 2571018cf4b895be
+dandelion: [
+  {
+    app_id: 0000bb9d,
+    app_key: ef45c22bd15ab0335f6c8c0437346516
+  },
+  {
+    app_id: 47582133,
+    app_key: 9a2eca56ceece8f283124a8dee267579
+  },
+  {
+    app_id: d39abfe6,
+    app_key: 7e41b04408cb8d897e6e38a077159d4f
+  }
+]
+pools:
+  default: 1
+  low_priority: 1

@@ -1,0 +1,30 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  host: 127.0.0.1
+  port: 3306
+
+development:
+  <<: *default
+  database: fireforse_development
+  username: root
+  password:
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  <<: *default
+  database: fireforse_test
+  username: root
+  password:
+
+production:
+  <<: *default
+  database: fireforse_production
+  host: firehorse01
+
+staging:
+  <<: *default
+  database: fireforse_production
+  host: firehorse01

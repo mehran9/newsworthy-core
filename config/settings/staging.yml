@@ -1,0 +1,59 @@
+streamers: [
+  {
+    consumer_key: '1Exveh48aIwomeg4MT0rzHwux',
+    consumer_secret: '0szZkoSSiAlg1qV0L24o03cz0RYCdcV3Elyn4IqDxLfZi9rhQs',
+    oauth_token: '3239782784-OPJ3GLcGvs3ZH5jAqLDsmye7y5p0S75SiX0u2SX',
+    oauth_token_secret: '0YGxbev2z2FM5HWMqISNqtOLKOJHAylRtCajCyDwVhyHU',
+    topic: 'Startups',
+    active: true
+  }
+]
+parse:
+  application_id: 0szZkoSSiAlg1qV0L24o03cz0RYCdcV3Elyn4IqD
+  api_key: OPJ3GLcGvs3ZH5jAqLDsmye7y5p0S75SiX0u2SX1
+  js_key: 0YGxbev2z2FM5HWMqISNqtOLKOJHAylRtCajCyDw
+  master_key: BTnqmiMJCaVAviZvztgQMFliKSaj7rk33n5hDpE2
+  quiet: true
+  host: 'http://maven-staging-parse-server.us-east-1.elasticbeanstalk.com'
+  path: '/parse'
+tweet_expected_lang: en
+website:
+  twitter:
+    consumer_key: 'DzBAlALyDAuErkyVarf0C47m6'
+    consumer_secret: 'wKDtQeRq7F6ZGBtjs1cDtzE2u3rvpPk7lpcQbQ3mgue59lpbx9'
+    oauth_token: '2616707372-qgk6hFwtte2tuI6UQWjRSayZfbseMtzuAYteqBU'
+    oauth_token_secret: 'ZjxDXMJsToVppf51GO5pfIwhdV6sB083rSxaFBAkdL3tl'
+  facebook:
+    application_id: 1612492745669574
+    application_secret: 813460c5e9f54a6af4e374f9e684e574
+    callback_url: 'http://getmaven.io/'
+google:
+  search_api_key: AIzaSyD0EJaF3yNkV8URzTi2Hxjm1WrePROA-SU
+  search_engine_id: 001467112278132618762:r7lecd-kwve
+createsend:
+  list_id: 881d20190b460416d220c4a6733be858
+pipl:
+  api_key: 3ep4xwd9p0pgy8hlbrq7qm7t
+fullcontact:
+  api_key: 7667948221c855d0
+dandelion: [
+  {
+    app_id: 0000bb9d,
+    app_key: ef45c22bd15ab0335f6c8c0437346516
+  },
+  {
+    app_id: 47582133,
+    app_key: 9a2eca56ceece8f283124a8dee267579
+  },
+  {
+    app_id: d39abfe6,
+    app_key: 7e41b04408cb8d897e6e38a077159d4f
+  }
+]
+pools:
+  default: 1
+  low_priority: 1
+db:
+  backup:
+    user: root
+    password: 6a49454b8386a0b5e4a89708444c7c42d28caa7a20e30b75b7f8479017f44cb0

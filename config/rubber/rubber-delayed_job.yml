@@ -1,0 +1,2 @@
+num_delayed_job_workers: 4
+delayed_job_pid_dir: "/mnt/#{app_name}-#{Rubber.env}/current/tmp/pids"

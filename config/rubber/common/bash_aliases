@@ -1,0 +1,6 @@
+<%
+  @path = "/root/.bash_aliases"
+%>
+alias log="cd /mnt/#{rubber_env.app_name}-#{Rubber.env}/shared/log/"
+alias rc="cd /mnt/#{rubber_env.app_name}-#{Rubber.env}/current && bundle exec rails c"
+alias l="ls -lah"

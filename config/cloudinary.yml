@@ -1,0 +1,25 @@
+---
+development:
+  cloud_name: newsworthy
+  api_key: '518763597633599'
+  api_secret: cDuDgHDZp6YehjuqevPXNCGZZ0w
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: newsworthy
+  api_key: '518763597633599'
+  api_secret: cDuDgHDZp6YehjuqevPXNCGZZ0w
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: newsworthy
+  api_key: '518763597633599'
+  api_secret: cDuDgHDZp6YehjuqevPXNCGZZ0w
+  enhance_image_tag: true
+  static_image_support: false
+staging:
+  cloud_name: newsworthy
+  api_key: '518763597633599'
+  api_secret: cDuDgHDZp6YehjuqevPXNCGZZ0w
+  enhance_image_tag: true
+  static_image_support: true

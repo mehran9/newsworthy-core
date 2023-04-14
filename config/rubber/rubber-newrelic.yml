@@ -1,0 +1,5 @@
+nrsysmond_license_key: 7ad24ba9124be47efd23d8e3201f5775f30f77a1
+
+roles:
+  newrelic:
+    packages: [newrelic-sysmond]

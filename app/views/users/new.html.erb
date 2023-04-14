@@ -1,0 +1,35 @@
+<div id="index-wrapper">
+  <div id="wrapper">
+    <div id="header">
+      <div class="header-area">
+        <h1>Be in the know</h1>
+        <h2>See what's trending among global thought leaders.</h2>
+        <div class="cta-area">
+          <a class="cta-button" href="#openModal">Get Private Beta Access</a>
+          <div id="openModal" class="modalDialog">
+            <div>
+              <a href="#close" title="Close" class="ion-ios-close-empty"></a>
+              <div class="modal-container">
+                <h5>Sign Up</h5>
+                <p>To request access to our private beta, please sign up below.</p>
+                <a class="cta-button tw-button" href="/auth/twitter?r=<%= params[:r] %>">Sign up with Twitter</a>
+                <a class="cta-button fb-button" href="/auth/facebook?r=<%= params[:r] %>">Sign up with Facebook</a>
+                <h7 style="color:#a5a5a5"><span class="modal-or">OR</span> Email</h7>
+                <%= form_tag({controller: 'users', action: 'create'}, remote: true, id: 'sign-up-form') do %>
+                    <%= email_field_tag(:email, nil, class: 'your-email-input modal-input', placeholder: 'Your Email Address', required: true ) %>
+                    <%= password_field_tag(:password, nil, class: 'your-password-input modal-input', placeholder: 'Your Password', required: true ) %>
+                    <%= hidden_field_tag(:r, params[:r]) %>
+                    <%= submit_tag('Sign up', class: 'cta-button purple-button') %>
+                    <div id="form-errors"></div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="app-image">
+          <%= image_tag 'nw-app-screen.png', width: '100%' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

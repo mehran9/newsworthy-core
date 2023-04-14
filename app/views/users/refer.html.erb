@@ -1,0 +1,85 @@
+<div id="wrapper">
+  <div id="header">
+    <div class="header-area">
+      <div class="header-cue-left">
+        <h6>Thank you for signing up!</h6>
+        <h1 class="cue-count"><%= number_with_delimiter(@user['BetaGroup']) %></h1>
+        <h5>People in front of you*</h5>
+      </div>
+
+      <div class="header-cue-right">
+        <h4>Get early access</h4>
+        <p>Share your unique link via email, Facebook or Twitter to invite friends. The more sign ups you refer, the earlier your access.</p>
+
+        <input class="your-unique-link" value="<%= @share_url %>">
+        <div class="social-sharing">
+          <div class="share-your-link" style="width:50%; float:left; margin-right:10px;">
+            <h6>Share on:</h6>
+          </div>
+          <div class="icons">
+            <%=
+                mail_to '', '', subject: 'Interesting news app', class: 'ion-ios-email icon', body: "Hi,
+
+Came across an interesting new app called Maven, a news reader where content is curated by global thought leaders.
+
+Thought you might be interested, check it out here: #{@share_url}
+"
+            %>
+            <a class="ion-social-twitter icon" target="_blank" href="https://twitter.com/home?status=<%= u("Can't wait for @newsworthyapp and reading only #newsworthy content #{@share_url}") %>"></a>
+            <a class="ion-social-facebook icon share_facebook" data-url="<%= @share_url %>" data-caption="<%= "Can't wait for @newsworthyapp and reading only #newsworthy content #{@share_url}" %>" href="#"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="body-content">
+  <div class="body-inner">
+    <h4>how it works</h4>
+    <div id="graph-area">
+      <div class="graph-top-row">
+        <div class="graph-1st-column"><h6>Friends joined</h6></div>
+        <div class="graph-2nd-column"><%= display_number(@user['ReferralCount'], 5) %></div>
+        <div class="graph-2nd-column"><%= display_number(@user['ReferralCount'], 10) %></div>
+        <div class="graph-2nd-column"><%= display_number(@user['ReferralCount'], 25) %></div>
+        <div class="graph-last-column"><%= display_number(@user['ReferralCount'], 50) %></div>
+      </div>
+
+      <div class="graph-middle-line">
+        <div class="graph-middle-line-highlight line-width-<%= @user['ReferralCount'] > 50 ? 50 : @user['ReferralCount'] %>">
+        </div>
+      </div>
+      <div class="graph-bottom-row">
+        <div class="graph-1st-column"><h6>Be among the first</h6></div>
+        <div class="graph-2nd-column"><%= display_text(@user['ReferralCount'], 50, 5000) %></div>
+        <div class="graph-2nd-column"><%= display_text(@user['ReferralCount'], 50, 1000) %></div>
+        <div class="graph-2nd-column"><%= display_text(@user['ReferralCount'], 50, 500) %></div>
+        <div class="graph-last-column"><%= display_text(@user['ReferralCount'], 50, 100) %></div>
+      </div>
+    </div>
+    <% if @user['ReferralCount'] <= 0 %>
+    <h5>
+        <span>No friends have joined!</span>
+    </h5>
+    <p style="color:#dddddd; font-style: italic; font-size:14px;"> Share your unique referral link and keep checking</p>
+    <% elsif @user['ReferralCount'] == 1 %>
+    <h5>
+        <span class="friends-joined">1</span><span>friend has joined!</span>
+    </h5>
+    <p style="color:#dddddd; font-style: italic; font-size:14px;">Keep checking</p>
+    <% else %>
+    <h5>
+        <span class="friends-joined"><%= @user['ReferralCount'] %></span><span>friends have joined!</span>
+    </h5>
+    <p style="color:#dddddd; font-style: italic; font-size:14px;">Keep checking</p>
+    <% end %>
+
+  </div>
+</div>
+<div id="why-area">
+  <div class="why-wrapper">
+    <h4>*Why is there a Queue?</h4>
+    <p>We are excited by the response we've had and look forward to growing our offering alongside our community. In order to scale a smooth and uninterrupted experience, we will be gradually rolling out invites to our private beta, on a first-come, first-serve basis. To reward our most loyal supporters, we have introduced the refer-a-friend feature above, granting early access to those who share the love with their friends!</p>
+  </div>
+</div>
